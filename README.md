@@ -1,4 +1,5 @@
 # Token Migration
+## Incremental deposits fork
 
 This [TokenMigration](src/lib.rs) blueprint aims to transition tokens from Olympia to Babylon, leveraging all the advanced resource capabilities of the Radix Babylon Engine (for further details refer to [Metadata Standard](https://docs-babylon.radixdlt.com/main/standards/metadata-standard-introduction.html)).
 
@@ -99,6 +100,29 @@ CALL_METHOD
     Address("account_your_account_address")
     "deposit_batch"
     Expression("ENTIRE_WORKTOP")
+;
+```
+
+## Incremental deposit of new tokens
+In case you want to deposit new tokens incrementally in the component you can do that via the `add_new_tokens` method.
+
+### Transaction Manifest
+```
+CALL_METHOD
+    Address("account_your_account_with_new_tokens")
+    "withdraw"
+    Address("resource_new_token")
+    Decimal("5")
+;
+TAKE_FROM_WORKTOP
+    Address("resource_new_token")
+    Decimal("5")
+    Bucket("new_token")
+;
+CALL_METHOD
+    Address("component_address_of_the_migration_component")
+    "add_new_tokens"
+    Bucket("new_token")
 ;
 ```
 

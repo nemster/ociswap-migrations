@@ -54,5 +54,14 @@ mod token_migration {
             self.old_token.put(old_token);
             self.new_token.take(old_amount)
         }
+
+        pub fn add_new_tokens(&mut self, new_token: Bucket) {
+            assert_eq!(
+                self.new_token.resource_address(),
+                new_token.resource_address(),
+                "You can only deposit the new tokens"
+            );
+            self.new_token.put(new_token);
+        }
     }
 }
