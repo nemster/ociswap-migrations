@@ -1,7 +1,9 @@
 # Token Migration
 ## Incremental deposits fork
 
-This [TokenMigration](src/lib.rs) blueprint aims to transition tokens from Olympia to Babylon, leveraging all the advanced resource capabilities of the Radix Babylon Engine (for further details refer to [Metadata Standard](https://docs-babylon.radixdlt.com/main/standards/metadata-standard-introduction.html)).
+This [TokenMigration](src/lib.rs) blueprint aims to transition tokens from Olympia to Babylon, leveraging all the advanced resource capabilities of the Radix Babylon Engine (for further details refer to [Metadata Standard](https://docs-babylon.radixdlt.com/main/standards/metadata-standard-introduction.html)).  
+
+The incremental deposit fork allows the new token to be deposited in multiple tranches, rather than once at component creation.
 
 ## Create Your New Token
 To use the migration blueprint you need to create your own new token first (preferrable with the same total supply than your old token).
@@ -40,12 +42,8 @@ If you have a mutable old token you should not mint or burn any of the old token
 
 ### Transaction Manifest
 Package addresses of blueprint:
-- Stokenet: `package_tdx_2_1pht43nrf52ptmw4ze57ngdkr9ps833l97t5ev6cclnekljzmzh2dev`
-- Mainnet: `package_rdx1pk00z83lvksl3wzs5kk6vw3a2d08zzwpfyqllyjkrmv7nv57y2rca8`
-
-If you intend to utilize the Ociswap dapp definition for the migration component (please note that the token dapp definition should always remain your own), this choice enhances wallet compatibility.
-- Stokenet: `account_tdx_2_12yhfrtak5j0pmaju5l3p752wpye4z4nzua679ypns0094hmu66p2yk`
-- Mainnet: `account_rdx12x2ecj3kp4mhq9u34xrdh7njzyz0ewcz4szv0jw5jksxxssnjh7z6z`
+- Stokenet: `package_tdx_2_1phm8qwpumehacz53qygcg7ta2xshuuskfw25l0dxw0esp6ng2q5j5y`
+- Mainnet: `package_rdx1phw2qpdwkz5wdhj7ynl5e0vhckgvuc5yym7tfc3hm56837klhtmc95`
 
 ```
 CALL_METHOD
