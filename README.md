@@ -159,7 +159,7 @@ sha256sum target/wasm32-unknown-unknown/release/token_migration.rpd
 ```
 
 SHA256 Hashes of the Scrypto Build:
-- token_migration.wasm `1a93957d5fa07cd0eafacd3accb80f19cf8aeebbaac1228215c8afce630fc902`
-- token_migration.rpd `e129ac154371e03619db30d41c2cb8cbe9ae3fd55cc591b68d39238e3f81d512`
+- token_migration.wasm `edbfb3cf6034ed4ca4cc0a284136a0281940857f6166ae97acbd4986ae5a0614`
+- token_migration.rpd `cdbfad7052fc53f158332df1aca589883ac5c8e10481c7c1ab8e4677b3657b5b`
 
 These hashes serve as a cryptographic fingerprint to confirm the authenticity and integrity of the build artifacts.
